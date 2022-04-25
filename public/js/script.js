@@ -10,19 +10,19 @@ function popup(){
                 
             },
             
-            BOOKING : true,
+            // BOOKING : true,
         },
     })
     
     .then((value) => {
         switch (value) {
 
-            case "BOOKING":
-            swal("Are you sure to Book the parking on durbar parking?","Please confirm the booking.") 
-                .then(function() { 
-            window.location = "/book_now";
-            });
-            break;
+            // case "BOOKING":
+            // swal("Are you sure to Book the parking on durbar parking?","Please confirm the booking.") 
+            //     .then(function() { 
+            // window.location = "/book_now";
+            // });
+            // break;
         
             case "catch":
             swal("Have you booked a parking?", "If yes then please click on ok.")

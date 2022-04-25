@@ -57,5 +57,10 @@
         </form>
 	</div>
 </div>
+<style>
+    *{
+        overflow:hidden;
+    }
+    </style>
 
 @endsection

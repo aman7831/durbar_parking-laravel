@@ -4,33 +4,32 @@
 <br><br>
 
         <h1 class="section-heading" style="text-align:center; color: rgba(253,88,88,255); font-size: 60px; text-transform: capitalize; margin-bottom: 20px;">
-            Our Services
+            ADMIN DASHBOARD
         </h1>
         
     <center>
-    <div class="row">
+<div class="row">
         <div class="column">
             <div class="card 10px">
-                <a href="/vehicle_details">
+                <a href="/registeredvehicle">
                 <div class="icon-wrapper">
                     <!-- <i class="fas fa-magnifier"></i> -->
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             
-                <h3>Vehicle Details</h3>
+                <h3>ALl Registered Vehicle</h3>
                 <p>
-                    Find or register to save vehicle details.
+                    All registered vehicle of user are given in the admin page.
                 </p>
             </a>
             </div>
         </div>
 
-        <div class="column">
+        <!-- <div class="column">
             <div class="card">
                 <div class="icon-wrapper">
                     <i class="fas fa-brush"></i>
-                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
-                </div>
+                    <i class="fa-solid fa-magnifying-glass"></i> 
                 
                 <h3>Book a parking area</h3>
                 <p>
@@ -94,7 +93,7 @@
                     consequatur necessitatibus eaque.
                 </p>
             </div>
-        </div>
+        </div> -->
         
     </div>
     </center>

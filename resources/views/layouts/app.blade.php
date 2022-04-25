@@ -44,11 +44,20 @@
                             <li><a href="/home">HOME</a></li>
                             <li><a href="/about">ABOUT</a></li>
                             <li><a href="/service">SERVICES</a></li>
+                            <!-- <li><a href="/vehicle_details">vehicle details</a></li> -->
+
+                            @auth
+                            @if(auth()->user()->role_id ==1)
+                            <li><a href="/dashboard">DASHBOARD</a></li>
+                            @endif
+                            @endif                         
+                            
+                            
                             <li><a href="#"></a></li>
                             <li><a href="#"></a></li>
                             <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
+
+                            
                             @guest
                             @if (Route::has('login'))
                             <li><a href="{{ route('login') }}">LOGIN</a></li>

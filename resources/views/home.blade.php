@@ -2,7 +2,6 @@
 
 @section('content')
 <br>
-
     <center>
         <div class="heading">
             <h2>Parking management system</h2>
@@ -431,12 +430,13 @@
                         </div>
                     </li>
                 </ul>
-                <br><br><br><br><br>
+                <br><br>
             </div>          
         </div>
         <hr style="color:red;; width:100%; border:0; border-bottom:3px solid white;">
 
-        <br><br><br><br><br>
+        <br><br>
+        
     </div>
 </div>
 @endsection

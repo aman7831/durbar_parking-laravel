@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<br><br><br><br>
+<br>
     <section class="about">
         <div class="main">
             <img src="{{ asset('img/background.jpg') }}">
