@@ -19,6 +19,7 @@ Route::get('', function () {
 
 Auth::routes();
 
+Route::get('/vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'destroy'])->name('vehicle_delete');
 Route::resources([
     'vehicle' => App\Http\Controllers\VehicleController::class,
 ]);
@@ -42,3 +43,7 @@ Route::post('/vehicle/store', [App\Http\Controllers\VehicleController::class, 's
 //admin 
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
 Route::get('/registeredvehicle', [App\Http\Controllers\AdminController::class, 'registeredvehicle'])->name('registeredvehicle');
+Route::get('/parkinglotdetails', [App\Http\Controllers\AdminController::class, 'parkinglotdetails'])->name('parkinglotdetails');
+Route::post('/parkinglot', [App\Http\Controllers\ParkinglotController::class, 'store'])->name('parking_lot_details');
+
+

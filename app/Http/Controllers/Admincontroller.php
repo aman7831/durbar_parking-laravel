@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Parkinglot;
 
 class admincontroller extends Controller
 {
@@ -31,5 +32,11 @@ class admincontroller extends Controller
     {
         return view('admin.registered_vehicle'); 
    
+    }
+
+    public function parkinglotdetails()
+    {
+        $parkinglots = Parkinglot::get()->all();
+        return view('admin.parking-lot-details',compact('parkinglots'));
     }
 }

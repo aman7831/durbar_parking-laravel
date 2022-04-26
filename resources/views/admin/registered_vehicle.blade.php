@@ -26,7 +26,7 @@
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
         <tr>
-          <td><center>Vehicle ID</center></td>
+          <td><center>Vechile Id</center></td>
           <td><center>Vehicle Name</center></td>
           <td><center>Vehicle Number</center></td>
           <td><center>User ID</center></td>

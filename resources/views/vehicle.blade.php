@@ -30,8 +30,8 @@
                         <td><center>{{ $vehicle->id }}</center></td>
                         <td><center>{{ $vehicle->vehicle_name }}</center></td>
                         <td><center>{{ $vehicle->vehicle_number }}</center></td>
-                        <td><center><a href="#"> Edit</a></center></td>
-                        <td><center><a href="#"> Delete</a></center></td>
+                        <td><center><a href="/vehicle/{{$vehicle->id}}/edit"> Edit</a></center></td>
+                        <td><center><a href="/vehicle/{{$vehicle->id}}"> Delete</a></center></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -61,10 +61,6 @@
 
 			<button type="submit"> Submit</button>
           
-            <small>
-				By clicking the button, You can register your account.
-				<a href="{{ route('register') }}">Register</a>
-			</small>
 
         </form>
 	</div>

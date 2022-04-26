@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('parkings', function (Blueprint $table) {
+        Schema::create('parkinglots', function (Blueprint $table) {
             $table->id();
-            // $table->string('name')->nullable();
-            // $table->srting('number')->nullable();
-            // $table->string('parking-lot')->nullable();
-            // $table->string('date')->nullable();
-            // $table->string('time-from')->nullable();
-            // $table->string('time-to')->nullable(); 
-
-
+            $table->string('parking_lot_name')->nullable();
+            $table->string('price')->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parkings');
+        Schema::dropIfExists('parkinglots');
     }
 };
