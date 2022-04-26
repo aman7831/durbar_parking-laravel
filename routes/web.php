@@ -43,7 +43,12 @@ Route::post('/vehicle/store', [App\Http\Controllers\VehicleController::class, 's
 //admin 
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
 Route::get('/registeredvehicle', [App\Http\Controllers\AdminController::class, 'registeredvehicle'])->name('registeredvehicle');
+Route::get('/parkinglot/{id}/edit', [App\Http\Controllers\AdminController::class, 'parkinglotdetailsedit'])->name('parkinglotdetailsedit');
 Route::get('/parkinglotdetails', [App\Http\Controllers\AdminController::class, 'parkinglotdetails'])->name('parkinglotdetails');
 Route::post('/parkinglot', [App\Http\Controllers\ParkinglotController::class, 'store'])->name('parking_lot_details');
+Route::get('/parkinglot/{id}', [App\Http\Controllers\ParkinglotController::class, 'destroy'])->name('parking_lot_delete');
+Route::post('/parkinglot/{id}', [App\Http\Controllers\ParkinglotController::class, 'update'])->name('parking_lot_update');
 
 
+//search
+Route::post('/search', [App\Http\Controllers\AdminController::class, 'search'])->name('search');

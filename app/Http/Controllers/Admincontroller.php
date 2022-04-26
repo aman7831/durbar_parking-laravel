@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Parkinglot;
+use App\Models\Vehicle;
 
 class admincontroller extends Controller
 {
@@ -38,5 +39,18 @@ class admincontroller extends Controller
     {
         $parkinglots = Parkinglot::get()->all();
         return view('admin.parking-lot-details',compact('parkinglots'));
+    }
+
+    public function parkinglotdetailsedit($id)
+    {
+        $parkinglots = Parkinglot::where('id',$id)->first();
+        return view('admin.parking_lot_details_edit',compact('parkinglots'));
+    }
+
+    public function search(Request $request)
+    {
+        $vehicle = Vehicle::where('id',$request->id)->get();
+        return view('admin.registered_vehicle', compact('vehicle')); 
+   
     }
 }

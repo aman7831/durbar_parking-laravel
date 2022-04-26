@@ -14,6 +14,11 @@ Parking details
 @foreach($parkinglots as $parkinglot)
 {{ $parkinglot->id }}
 {{$parkinglot->parking_lot_name}}
+<a href="parkinglot/{{$parkinglot->id}}/edit"> Edit</a>
+<a href="/parkinglot/{{$parkinglot->id}}">Delete</a>
 @endforeach
+
+
+
 
 @endsection

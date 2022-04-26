@@ -14,8 +14,7 @@ class ParkinglotController extends Controller
      */
     public function index()
     {
-        $parkinglots = Parkinglot::get();
-        dd($parkinglots);
+        $parkinglots = Parkinglot::get()->all();
         return view('admin.parking-lot-details',compact('parkinglots'));
     }
 
@@ -73,10 +72,13 @@ class ParkinglotController extends Controller
      * @param  \App\Models\Parkinglot  $parkinglot
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Parkinglot $parkinglot)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $a=Parkinglot::where('id',$id)->first();
+        $a->parking_lot_name = $request->parkinglotname;
+        $a->price = $request->price;
+        $a->save();
+        return redirect('/parkinglotdetails');    }
 
     /**
      * Remove the specified resource from storage.
@@ -84,8 +86,9 @@ class ParkinglotController extends Controller
      * @param  \App\Models\Parkinglot  $parkinglot
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Parkinglot $parkinglot)
+    public function destroy(Parkinglot $id)
     {
-        //
+        $parkinglots = Parkinglot::find($id)->first()->delete();
+        return redirect('/parkinglotdetails');
     }
 }
