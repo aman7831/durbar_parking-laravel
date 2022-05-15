@@ -42,6 +42,7 @@
 
         <div class="column">
             <div class="card">
+            <a href="/reserve_now">
                 <div class="icon-wrapper">
                     <i class="fas fa-brush"></i>
                 </div>
@@ -52,10 +53,13 @@
                     consequatur necessitatibus eaque.
                 </p>
             </div>
+</a>
         </div>
 
         <div class="column">
             <div class="card">
+            <a href="/use_now">
+
                 <div class="icon-wrapper">
                     <i class="fas fa-brush"></i>
                 </div>
@@ -66,10 +70,12 @@
                     consequatur necessitatibus eaque.
                 </p>
             </div>
+            </a>
         </div>
 
         <div class="column">
             <div class="card">
+            <a href="/invoice">
                 <div class="icon-wrapper">
                     <i class="fas fa-brush"></i>
                 </div>
@@ -80,10 +86,12 @@
                     consequatur necessitatibus eaque.
                 </p>
             </div>
+</a>
         </div>
 
         <div class="column">
             <div class="card">
+            <a href="/payment">
                 <div class="icon-wrapper">
                     <i class="fas fa-brush"></i>
                 </div>
@@ -94,6 +102,7 @@
                     consequatur necessitatibus eaque.
                 </p>
             </div>
+</a>
         </div>
         
     </div>

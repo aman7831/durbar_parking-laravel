@@ -36,7 +36,7 @@
                     <li>
                         <div class="parkinglot">
                             <form onclick="popup()">
-                                <a href="#">
+                                <a href="#" onclick="p1()">
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -214,7 +214,7 @@
                     <li>
                         <div class="parkinglot">
                             <form onclick="popup()">
-                                <a href="#">
+                                <a >
                                     <span></span>
                                     <span></span>
                                     <span></span>

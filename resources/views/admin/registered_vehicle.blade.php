@@ -9,9 +9,10 @@
   <br><br>
   <form method="post" action="/search">
     @csrf
-  <input type="text" name="id"><button>search</button>
+  <input type="text" name="vehicle_number" placeholder="Please search the vehicle details using vehicle number" required>
+  <button>search</button>
 </form>
-  <br><br>
+<br><br>
 
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -49,7 +50,13 @@
       </tbody>
     </table>
   </div>
+</center>
+    <br><br>
+    <hr style="color:rgba(253,88,88,255);; width:90%; border:0; border-bottom:1px solid #ccc; margin:10px auto;">
+    <center><p style="color:#ff7200;"> <a href="/home" style="color: rgba(253,88,88,255);">Durbar Parking</a> &copy; Copyright 2022, All Rights Reserve <a href="https://aman7831.github.io/aman._.bhandari/" style="color:#ff7200;"> Aman Bhandari</a></p></center>
 </section>
+
+
 
 <script>
     $(window).on("load resize ", function() {

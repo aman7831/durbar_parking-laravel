@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Parkinglot;
+use App\Models\Vehicle;
 
 class Parking_detailsController extends Controller
 {
@@ -30,6 +32,15 @@ class Parking_detailsController extends Controller
     public function reserve_now()
     {
         return view('reserve_now');
+    }
+
+    public function invoice()
+    {
+        return view('invoice');
+    }
+    public function payment()
+    {
+        return view('payment');
     }
 
 }

@@ -16,7 +16,6 @@
                         <th><center>Vehicle Number</center></th>
                         <th><center>Edit</center></th>
                         <th><center>Delete</center></th>
-
                     </tr>
                 </thead>
             </table>
@@ -49,12 +48,12 @@
             @csrf
 			
 			<div class="form-control">
-				<input id="vehicle name" type="text" name="vehicle_name"  placeholder="Enter your vehicle name"/>
+				<input id="vehicle name" type="text" name="vehicle_name"  placeholder="Enter your vehicle name" required/>
 				<img src="./images/icon-error.svg" alt="error-icon" />
 			</div>
 
 			<div class="form-control">
-				<input id="vehicle number" type="text" name="vehicle_number"  placeholder="Enter your vehicle number">
+				<input id="vehicle number" type="text" name="vehicle_number"  placeholder="Enter your vehicle number" required>
 				<img src="./images/icon-error.svg" alt="error-icon" />
 			
             </div>

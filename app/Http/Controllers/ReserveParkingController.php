@@ -1,30 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use App\Models\Vehicle;
 
-class VehicleController extends Controller
+use App\Models\ReserveParking;
+use App\Models\Vehicle;
+use Illuminate\Http\Request;
+
+
+class ReserveParkingController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        $vehicles = Vehicle::where('user_id',auth()->user()->id)->get();
+        $reserves = ReserveParking::where('user_id',auth()->user()->id)->get();
 
-        return view('vehicle',compact('vehicles'));
+        return view('reserve',compact('reserves'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +27,7 @@ class VehicleController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -43,35 +38,39 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-
         $user = auth()->user()?auth()->user()->id:null;
-        $a= new Vehicle();
-        $a->vehicle_name = $request->vehicle_name;
-        $a->vehicle_number = $request->vehicle_number;
+        $r= new ReserveParking();
+        $r->vehicle_name = $request->vehicle_name;
+        $r->vehicle_number = $request->vehicle_number;
+        $r->parkinglot = $request->parkinglot;
+        $r->date = $request->date;
+        $r->time_from = $request->time_from;
+        $r->time_to = $request->time_to;
 
-        $a->user_id = $user;
-        $a->save();
+
+        $r->user_id = $user;
+        $r->save();
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Vehicle  $vehicle
+     * @param  \App\Models\ReserveParking  $reserveParking
      * @return \Illuminate\Http\Response
      */
-    public function show(Vehicle $vehicle)
+    public function show(ReserveParking $reserveParking)
     {
-        
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Vehicle  $vehicle
+     * @param  \App\Models\ReserveParking  $reserveParking
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vehicle $vehicle)
+    public function edit(ReserveParking $reserveParking)
     {
         //
     }
@@ -80,30 +79,22 @@ class VehicleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Vehicle  $vehicle
+     * @param  \App\Models\ReserveParking  $reserveParking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vehicle $vehicle)
+    public function update(Request $request, ReserveParking $reserveParking)
     {
-        $a=Vehicle::where('id',$id)->first();
-        $a->vehicle_name = $request->vehicle_name;
-        $a->vehicle_number = $request->vehicle_number;
-        $a->save();
-        return redirect('/vehicle_details'); 
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Vehicle  $vehicle
+     * @param  \App\Models\ReserveParking  $reserveParking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vehicle $id)
+    public function destroy(ReserveParking $reserveParking)
     {
-    $vehicles = Vehicle::find($id)->first()->delete();
-    return redirect()->back();
+        //
     }
-
-
-    
 }

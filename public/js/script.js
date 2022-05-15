@@ -25,18 +25,32 @@ function popup(){
             // break;
         
             case "catch":
-            swal("Have you booked a parking?", "If yes then please click on ok.")
+            swal("Please select the vehicle", "to use the parking space now.")
+            
             .then(function() { 
-            window.location = "/use_now";
-            });
-
+            window.location = "/use_now";});
             break;
         
             default:
-            swal("Have you already reserved the parking space?","Please click on OK button to check the reserved parking details?").then(function() { 
+            swal("Please select the vehicle","to reserve a parking.").
+            then(function() { 
             window.location = "/reserve_now";
             });
         }
     });
 }
+
 // HOme popup close 
+
+//reserve successful open
+function reserve(){
+    swal({
+        title: "Reserved Successfully!",
+        text: "Thank you for choosing durbar parking",
+        icon: "success",
+        button: "ok",
+      });
+}
+
+//reserve successful close
+

@@ -10,12 +10,11 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
                     <tr>
-                        <th><center>Parking Lot ID</center></th>
-                        <th><center>Parking Lot Name</center></th>
-                        <th><center>Price</center></th>
+                        <th><center>Vehicle ID</center></th>
+                        <th><center>Vehicle Name</center></th>
+                        <th><center>Vehicle Number</center></th>
                         <th><center>Edit</center></th>
                         <th><center>Delete</center></th>
-
                     </tr>
                 </thead>
             </table>
@@ -28,19 +27,19 @@
 
     <div>
 		<div class="box box-blue">
-			<p><strong>EDIT PARKING LOT DETAILS</strong> !</p>
+			<p><strong>EDIT VEHICLE DETAILS</strong> !</p>
 		</div>
 
-		<form action="/parkinglot/{{$parkinglots->id}}" method="post">
+		<form action="/vehicle/{{ $vehicle->id }}" method="post">
             @csrf
 			
 			<div class="form-control">
-				<input  type="text" name="parkinglotname" placeholder="Enter the parking lot name" value = "{{$parkinglots->parking_lot_name}}" required/>
+				<input  type="text" name="vehicle_name" placeholder="Enter the parking lot name" value = "{{ $vehicle->vehicle_name }}" required/>
 				<img src="./images/icon-error.svg" alt="error-icon" />
 			</div>
 
 			<div class="form-control">
-				<input type="text" name="price" placeholder="Enter the price" value ="{{$parkinglots->price}}" required>
+				<input type="text" name="vehicle_number" placeholder="Enter the price" value ="{{ $vehicle->vehicle_number }}" required>
 				<img src="./images/icon-error.svg" alt="error-icon" />
 			
             </div>

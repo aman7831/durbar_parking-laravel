@@ -47,10 +47,17 @@ class admincontroller extends Controller
         return view('admin.parking_lot_details_edit',compact('parkinglots'));
     }
 
+    public function vehicleedit($id)
+    {
+        $vehicle = Vehicle::where('id',$id)->first();
+        return view('vehicle_edit',compact('vehicle'));
+    }
+    
     public function search(Request $request)
     {
-        $vehicle = Vehicle::where('id',$request->id)->get();
+        $vehicle = Vehicle::where('vehicle_number',$request->vehicle_number)->get();
         return view('admin.registered_vehicle', compact('vehicle')); 
-   
     }
+
+
 }
