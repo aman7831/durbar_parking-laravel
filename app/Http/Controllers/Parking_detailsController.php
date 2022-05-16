@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Parkinglot;
+use App\Models\ReserveParking;
+
+
 use App\Models\Vehicle;
 
 class Parking_detailsController extends Controller
@@ -16,7 +19,8 @@ class Parking_detailsController extends Controller
     
     public function parking_details()
     {
-        return view('parking_details');
+        $reserves = ReserveParking::where('user_id',auth()->user()->id)->get();
+        return view('parking_details',compact('reserves'));
     }
     
     public function book_now()
@@ -29,9 +33,11 @@ class Parking_detailsController extends Controller
         return view('use_now');
     }
 
-    public function reserve_now()
+    public function reserve_now($id)
     {
-        return view('reserve_now');
+        $parkinglot = Parkinglot::where('id',$id)->first();
+        $vehicle = Vehicle::where('user_id',auth()->user()->id)->get()  ;
+        return view('reserve_now',compact('vehicle','parkinglot'));
     }
 
     public function invoice()

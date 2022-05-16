@@ -36,10 +36,11 @@
         @if(!empty($vehicle))
         @foreach ($vehicle as $v)
         <tr>
+          
           <td><center>{{ $v->id }}</center></td>
           <td><center>{{ $v->vehicle_name }}</center></td>
           <td><center>{{ $v->vehicle_number }}</center></td>
-          <td><center>User Name</center></td>
+          <td><center>{{ $v->name}}</center></td>
           <td><center>User Name</center></td>
           <td><center>Registered At</center></td>
           <td><center>Edit Details</center></td>

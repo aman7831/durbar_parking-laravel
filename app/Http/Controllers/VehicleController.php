@@ -83,9 +83,9 @@ class VehicleController extends Controller
      * @param  \App\Models\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vehicle $vehicle)
+    public function update(Request $request, $id)
     {
-        $a=Vehicle::where('id',$id)->first();
+        $a= Vehicle::where('id',$id)->first();
         $a->vehicle_name = $request->vehicle_name;
         $a->vehicle_number = $request->vehicle_number;
         $a->save();

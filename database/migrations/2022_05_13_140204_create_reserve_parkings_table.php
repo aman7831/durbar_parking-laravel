@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('vehicle_number')->nullable();
             $table->string('parkinglot')->nullable();
             $table->string('date')->nullable();
-            $table->string('time_from')->nullable();
-            $table->string('time_to')->nullable();
+            $table->string('from_time')->nullable();
+            $table->string('to_time')->nullable();
 
 
 

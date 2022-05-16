@@ -3,6 +3,10 @@
 @section('content')
 <br><br><br><br>
 parking details
-<img src="/img/background.jpg" class="img-responsive" alt="">
 
+@if(!empty($reserves))
+@foreach($reserves as $reserve)
+{{$reserve->id}}
+@endforeach
+@endif
 @endsection

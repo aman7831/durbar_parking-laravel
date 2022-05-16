@@ -25,7 +25,7 @@ Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->na
 Route::get('/service', [App\Http\Controllers\AboutController::class, 'service'])->name('service');
 Route::get('/book_now', [App\Http\Controllers\Parking_detailsController::class, 'book_now'])->name('book_now');
 Route::get('/use_now', [App\Http\Controllers\Parking_detailsController::class, 'use_now'])->name('use_now');
-Route::get('/reserve_now', [App\Http\Controllers\Parking_detailsController::class, 'reserve_now'])->name('reserve_now');
+Route::get('/reserve_now/{id}', [App\Http\Controllers\Parking_detailsController::class, 'reserve_now'])->name('reserve_now');
 Route::get('/parking_details', [App\Http\Controllers\Parking_detailsController::class, 'parking_details'])->name('parking_details');
 Route::get('/invoice', [App\Http\Controllers\Parking_detailsController::class, 'invoice'])->name('invoice');
 Route::get('/payment', [App\Http\Controllers\Parking_detailsController::class, 'payment'])->name('payment');
@@ -36,10 +36,10 @@ Route::get('/vehicle/{id}/edit', [App\Http\Controllers\AdminController::class, '
 Route::get('/vehicle_details', [App\Http\Controllers\VehicleController::class, 'index'])->name('vehicle_details');
 Route::post('/vehicle/store', [App\Http\Controllers\VehicleController::class, 'store'])->name('vehicle_store');
 Route::get('/vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'destroy'])->name('vehicle_delete');
+Route::post('/vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'update'])->name('vehicle_update');
 Route::resources([
     'vehicle' => App\Http\Controllers\VehicleController::class,
 ]);
-Route::post('/vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'update'])->name('vehicle_update');
 
 
 

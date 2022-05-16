@@ -11,7 +11,7 @@
                         <th><center>Vehicle ID</center></th>
                         <th><center>Vehicle Name</center></th>
                         <th><center>Vehicle Number</center></th>
-                        <th><center>Edit</center></th>
+                        <th><center>Select</center></th>
                     </tr>
                 </thead>
             </table>
@@ -20,16 +20,19 @@
         <div class="tbl-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
+                  @foreach($vehicle as $key => $v)
                     <tr>
-                        <td><center>Vehicle ID</center></td>
-                        <td><center>Vehicle Name</center></td>
-                        <td><center>Vehicle Number</center></td>
-                        <td><center><button><a href="#">Select</a></button></center></td>
+                        <td><center><div id ="id[{{$key}}]" >{{ $v->id }}</div></center></td>
+                        <td><center><div id ="name[{{$key}}]" >{{ $v->vehicle_name}}</div></center></td>
+                        <td><center><div id ="number[{{$key}}]" >{{ $v->vehicle_number}}</div></center></td>
+                        <td><center><button onclick="select({{$key}})">Select</button></center></td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
 	    </div>
+
 
       <div>
         <div class="login-box">
@@ -39,19 +42,27 @@
             @csrf
               
               <div class="user-box">
-                <input type="text" name="vehicle_name" required="">
+                <input type="text" name="vehicle_name" id ="vehicle_name" required="">
                 <label>Vehicle Name : </label>
               </div>
 
               <div class="user-box">
-                <input type="Text" name="vehicle_number" required="">
+                <input type="Text" name="vehicle_number" id = "vehicle_number" required="">
                 <label>Vehicle Number : </label>
               </div>
          
               <div class="user-box">
-                <button id="sub" style="width: 10px; height: 10px; cursor: pointer;">-</button>
-                <input type="number" name="parkinglot" id="qtyBox" readonly="" value="1" required="">
-                <button id="add" style="width: 10px; height: 10px; cursor: pointer;">+</button>
+                <!-- <button id="sub" style="width: 10px; height: 10px; cursor: pointer;">-</button> -->
+                <?php
+                if(!empty($parkinglot)){
+                $name = $parkinglot->parking_lot_name;
+                }
+                else{
+                  $name = null;
+                }
+                ?>
+                <input type="text" name="parkinglot" id="qtyBox" value="{{$name}}" placeholder="{{$name}}" required="">
+                <!-- <button id="add" style="width: 10px; height: 10px; cursor: pointer;">+</button> -->
                 <label>Parking lot (P) : </label>
               </div>
 
@@ -92,6 +103,15 @@
 </div>
 <script language="javascript">
 
+
+function select(key){
+ var name = document.getElementById('name['+key+']').innerHTML;
+ var number = document.getElementById('number['+key+']').innerHTML;
+ document.getElementById('vehicle_name').value = name;
+ document.getElementById('vehicle_number').value = number;
+}
+
+
   //date
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -103,22 +123,22 @@
 
 
   // parking lot 
-  let addBtn = document.querySelector('#add');
-		let subBtn = document.querySelector('#sub');
-		let qty = document.querySelector('#qtyBox');
+  // let addBtn = document.querySelector('#add');
+	// 	let subBtn = document.querySelector('#sub');
+	// 	let qty = document.querySelector('#qtyBox');
 		
-		addBtn.addEventListener('click',()=>{
-			qty.value = parseInt(qty.value) + 1;
-		});
+	// 	addBtn.addEventListener('click',()=>{
+	// 		qty.value = parseInt(qty.value) + 1;
+	// 	});
 
-		subBtn.addEventListener('click',()=>{
-			if (qty.value <= 0) {
-				qty.value = 0;
-			}
-			else{
-				qty.value = parseInt(qty.value) - 1;
-			}
-		});
+	// 	subBtn.addEventListener('click',()=>{
+	// 		if (qty.value <= 0) {
+	// 			qty.value = 0;
+	// 		}
+	// 		else{
+	// 			qty.value = parseInt(qty.value) - 1;
+	// 		}
+	// 	});
 
 </script>
 

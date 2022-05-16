@@ -31,7 +31,8 @@ class admincontroller extends Controller
 
     public function registeredvehicle()
     {
-        return view('admin.registered_vehicle'); 
+    $vehicle = Vehicle::join('users','vehicles.user_id','=','users.id')->get();
+        return view('admin.registered_vehicle',compact('vehicle')); 
    
     }
 
@@ -55,7 +56,7 @@ class admincontroller extends Controller
     
     public function search(Request $request)
     {
-        $vehicle = Vehicle::where('vehicle_number',$request->vehicle_number)->get();
+        $vehicle = Vehicle::join('users','vehicles.user_id','=','users.id')->where('vehicle_number',$request->vehicle_number)->get();
         return view('admin.registered_vehicle', compact('vehicle')); 
     }
 
