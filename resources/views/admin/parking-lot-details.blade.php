@@ -29,7 +29,7 @@
                     <tr>
                         <td><center>{{ $parkinglot->id }}</center></td>
                         <td><center>{{$parkinglot->parking_lot_name}}</center></td>
-                        <td><center>{{$parkinglot->price}}</center></td>
+                        <td><center>Rs. {{$parkinglot->price}}</center></td>
                         <td><center><a href="parkinglot/{{$parkinglot->id}}/edit"> Edit</a></center></td>
                         <td><center><a href="/parkinglot/{{$parkinglot->id}}"> Delete</a></center></td>
                     </tr>
@@ -49,12 +49,12 @@
             @csrf
 			
 			<div class="form-control">
-				<input  type="text" name="parkinglotname" placeholder="Enter the parking lot name" required/>
+				<input  type="text" name="parkinglotname" placeholder="Enter the parking lot name" value ="P"required/>
 				<img src="./images/icon-error.svg" alt="error-icon" />
 			</div>
 
 			<div class="form-control">
-				<input type="text" name="price" placeholder="Enter the price" required>
+				<input type="text" name="price" placeholder="Enter the price" value="50" required>
 				<img src="./images/icon-error.svg" alt="error-icon" />
 			
             </div>

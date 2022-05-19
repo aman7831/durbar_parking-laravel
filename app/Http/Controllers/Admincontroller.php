@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Parkinglot;
 use App\Models\Vehicle;
+use App\Models\ReserveParking;
+
 
 class admincontroller extends Controller
 {
@@ -31,8 +33,15 @@ class admincontroller extends Controller
 
     public function registeredvehicle()
     {
-    $vehicle = Vehicle::join('users','vehicles.user_id','=','users.id')->get();
+        $vehicle = Vehicle::join('users','vehicles.user_id','=','users.id')->get();
         return view('admin.registered_vehicle',compact('vehicle')); 
+   
+    }
+
+    public function allreservedparkinglotdetails()
+    {
+        $reserves = ReserveParking::join('users','reserve_parkings.user_id','=','users.id')->get();
+        return view('admin.check_reserve_parking',compact('reserves')); 
    
     }
 

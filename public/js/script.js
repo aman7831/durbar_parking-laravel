@@ -49,7 +49,9 @@ function reserve(){
         text: "Thank you for choosing durbar parking",
         icon: "success",
         button: "ok",
-      });
+      }).then(function() {
+        window.location = "/parking_details";
+    });
 }
 
 //reserve successful close

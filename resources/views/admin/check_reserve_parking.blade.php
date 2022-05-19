@@ -5,9 +5,9 @@
 
 <section>
   <!--for demo wrap-->
-  <h1>Registered Vehicle details</h1>
+  <h1>All reserved vehicle for parking</h1>
   <br><br>
-  <form method="post" action="/search">
+  <form method="post" action="#">
     @csrf
   <input type="text" name="vehicle_number" placeholder="Please search the vehicle details using vehicle number" required>
   <button>search</button>
@@ -18,15 +18,18 @@
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-          <th><center>Vehicle ID</center></th>
+          <th><center>Reserve parking ID</center></th>
           <th><center>Vehicle Name</center></th>
           <th><center>Vehicle Number</center></th>
-          <!-- <th><center>User ID</center></th> -->
+          <th><center>Parking lot</center></th>
+          <th><center>Date</center></th>
+          <th><center>Time (From)</center></th>
+          <th><center>Time (To)</center></th>
+          <th><center>User ID</center></th>
           <th><center>User Name</center></th>
-          <th><center>User Email</center></th>
-          <th><center>User Registered at</center></th>
-          <!-- <th><center>Edit Details</center></th>
-          <th><center>Delete Details</center></th> -->
+          <th><center>Email</center></th>
+          <!-- <th><center>Checkin Time</center></th>
+          <th><center>Checkout Time</center></th> -->
         </tr>
       </thead>
     </table>
@@ -34,22 +37,26 @@
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-        @if(!empty($vehicle))
-        @foreach ($vehicle as $v)
+        @if(!empty($reserves))
+        @foreach($reserves as $reserve)
         <tr>
-          <td><center>{{ $v->id }}</center></td>
-          <td><center>{{ $v->vehicle_name }}</center></td>
-          <td><center>{{ $v->vehicle_number }}</center></td>
-          <!-- <td><center>User ID</center></td> -->
-          <td><center>{{ $v->name}}</center></td>
-          <td><center>{{ $v->email}}</center></td>
-          <td><center>{{ $v->created_at}}</center></td>
-          <!-- <td><center>Edit Details</center></td>
-          <td><center>Delete Details</center></td> -->
+          <td><center>{{$reserve->id}}</center></td>
+          <td><center>{{$reserve->vehicle_name}}</center></td>
+          <td><center>{{$reserve->vehicle_number}}</center></td>
+          <td><center>{{$reserve->parkinglot}}</center></td>
+          <td><center>{{$reserve->date}}</center></td>
+          <td><center>{{$reserve->from_time}}</center></td>
+          <td><center>{{$reserve->to_time}}</center></td>
+          <td><center>{{$reserve->user_id}}</center></td>
+          <td><center>{{$reserve->name}}</center></td>
+          <td><center>{{$reserve->email}}</center></td>
+          <!-- <td><center>Checkin Time</center></td>
+          <td><center>Checkout Time</center></td>       -->
         </tr>
         @endforeach
         @endif
       </tbody>
+      
     </table>
   </div>
 </center>

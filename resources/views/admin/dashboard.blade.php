@@ -41,20 +41,22 @@
             </div>
         </div>
 
-       <!-- <div class="column">
-            <div class="card">
+        <div class="column">
+            <div class="card 10px">
+                <a href="/allreservedparkinglotdetails">
                 <div class="icon-wrapper">
-                    <i class="fas fa-brush"></i>
+                    <!-- <i class="fas fa-magnifier"></i> -->
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                
-                <h3>Reserve a parking area.</h3>
+            
+                <h3>All reserved parking details</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-                    consequatur necessitatibus eaque.
+                    Check the parking lot details here.
                 </p>
+            </a>
             </div>
         </div>
-
+<!--
         <div class="column">
             <div class="card">
                 <div class="icon-wrapper">

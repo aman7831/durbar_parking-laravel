@@ -82,7 +82,7 @@
               </div>
 
               
-              <a onclick="reserve()">
+              <a href="/parking_details">
                 <button type="submit">
                 <span></span>
                 <span></span>
@@ -103,7 +103,7 @@
 </div>
 <script language="javascript">
 
-
+// select vehicle
 function select(key){
  var name = document.getElementById('name['+key+']').innerHTML;
  var number = document.getElementById('number['+key+']').innerHTML;
@@ -120,25 +120,6 @@ function select(key){
 
   today = yyyy + '-' + mm + '-' + dd;
   $('#date_picker').attr('min',today);
-
-
-  // parking lot 
-  // let addBtn = document.querySelector('#add');
-	// 	let subBtn = document.querySelector('#sub');
-	// 	let qty = document.querySelector('#qtyBox');
-		
-	// 	addBtn.addEventListener('click',()=>{
-	// 		qty.value = parseInt(qty.value) + 1;
-	// 	});
-
-	// 	subBtn.addEventListener('click',()=>{
-	// 		if (qty.value <= 0) {
-	// 			qty.value = 0;
-	// 		}
-	// 		else{
-	// 			qty.value = parseInt(qty.value) - 1;
-	// 		}
-	// 	});
 
 </script>
 

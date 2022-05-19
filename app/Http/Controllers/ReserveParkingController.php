@@ -95,6 +95,7 @@ class ReserveParkingController extends Controller
      */
     public function destroy(ReserveParking $reserveParking)
     {
-        //
+        $reserves = ReserveParking::find($id)->first()->delete();
+        return redirect()->back();
     }
 }

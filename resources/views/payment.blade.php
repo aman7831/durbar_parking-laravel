@@ -94,9 +94,21 @@
         var cash = document.getElementById("cash");
         cash.style.display = "block";  	 
         }
-        function paymentsuccess(){
-            swal("Congrats", "Your Payment is Success", "success");
+
+
+        function paymentsuccess()
+        {
+            swal({
+                title: "Congratulation",
+                text: "Your Payment is successful",
+                icon: "success",
+            }).then(function() {
+                window.location = "/home";
+            });
         }
+
+
+           
     
     </script>
 

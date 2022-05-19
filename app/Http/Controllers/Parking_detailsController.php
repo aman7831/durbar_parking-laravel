@@ -42,7 +42,8 @@ class Parking_detailsController extends Controller
 
     public function invoice()
     {
-        return view('invoice');
+        $reserves = ReserveParking::where('user_id',auth()->user()->id)->first();
+        return view('invoice',compact('reserves'));
     }
     public function payment()
     {

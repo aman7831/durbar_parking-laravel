@@ -27,36 +27,38 @@
 
         <div class="column">
             <div class="card">
+            <a href="/parking_details">
                 <div class="icon-wrapper">
                     <i class="fas fa-brush"></i>
-                    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 
-                <h3>Book a parking area</h3>
+                <h3>Parking Details</h3>
                 <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
                     consequatur necessitatibus eaque.
                 </p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-            <a href="/reserve_now">
-                <div class="icon-wrapper">
-                    <i class="fas fa-brush"></i>
-                </div>
-                
-                <h3>Reserve a parking area.</h3>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
-                    consequatur necessitatibus eaque.
-                </p>
-            </div>
 </a>
+            </div>
         </div>
 
-        <div class="column">
+        <!-- <div class="column">
+            <div class="card">
+                <a href="/reserve_now">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-brush"></i>
+                    </div>
+                    
+                    <h3>Reserve a parking area.</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam
+                        consequatur necessitatibus eaque.
+                    </p>
+                </a>
+            </div>
+        </div> -->
+
+        <!-- <div class="column">
             <div class="card">
             <a href="/use_now">
 
@@ -71,7 +73,7 @@
                 </p>
             </div>
             </a>
-        </div>
+        </div> -->
 
         <div class="column">
             <div class="card">

@@ -16,13 +16,54 @@
 
     <!-- <hr style="color:red;; width:100%; border:0; border-bottom:3px solid #ff7200;"> -->
 
-        <div class="column">
+    <div class="container">
+           
+        <a href="#">
+        <div class="row"> 
+            <div class="card" style="width: 8rem;">   
+                <button href="#" class="buy_now btn-success">Start</button>
+                
+                <div class= "col-md-1"></div>
+            </div>
+            
+        </div>
+        </a>
+
+        @if(!empty($parkinglots))
+        @foreach($parkinglots as $parkinglot)
+        
+        <a href="/reserve_now/{{$parkinglot->id}}">
+        <div class="row"> 
+            <div class="card" style="width: 8rem;">   
+                <button href="/reserve_now/{{$parkinglot->id}}" class="buy_now btn-success">{{$parkinglot->parking_lot_name}} </button>
+                
+                <div class= "col-md-1"></div>
+            </div>
+            
+        </div>
+        </a>
+        @endforeach
+        @endif
+
+        <a href="">
+        <div class="row"> 
+            <div class="card" style="width: 8rem;">   
+                <button href="" class="buy_now btn-success">End</button>
+                
+                <div class= "col-md-1"></div>
+            </div>
+            
+        </div>
+        </a>
+    </div>
+
+    <!-- <div class="column">
             <div class="menu">
                 <ul>
                     <li>
                         <div class="parkinglot">
                             <form>
-                                <a href="#">
+                                <a href="#" active>
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -72,6 +113,6 @@
 
         <br><br>
         
-    </div>
+    </div> -->
 </div>
 @endsection

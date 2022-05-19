@@ -55,11 +55,15 @@ Route::get('/reserve_now/store', [App\Http\Controllers\ReserveParkingController:
 Route::resources([
     'reserve' => App\Http\Controllers\ReserveParkingController::class,
 ]);
+Route::get('/reserve/{id}', [App\Http\Controllers\ReserveParkingController::class, 'destroy'])->name('reserver_parking_delete');
+
 
 
 //admin 
 Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
 Route::get('/registeredvehicle', [App\Http\Controllers\AdminController::class, 'registeredvehicle'])->name('registeredvehicle');
+Route::get('/allreservedparkinglotdetails', [App\Http\Controllers\AdminController::class, 'allreservedparkinglotdetails'])->name('allreservedparkinglotdetails');
+
 
 
 //search
