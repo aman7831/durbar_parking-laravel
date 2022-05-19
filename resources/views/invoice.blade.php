@@ -26,9 +26,15 @@
                     <div class="graphic-path">
                         <p>Seller Invoice Bill</p>
                     </div>
+                  
+                   
                     <div class="position-relative">
-                        <p>Invoice No. <span>Reserve id</span></p>
+                    
+                        <p>Invoice No. <span>{{$reserves->id}}</span></p>
+                       
                     </div>
+                    
+        
                 </div>
             </section>
 
@@ -57,7 +63,7 @@
                             <p>Payment Method: <span>Cash On Delivery</span></p>
                         </div>
                         <div class="col-5">
-                           <p>Date: <span>6/6/2021 - 6/7/2021</span></p>
+                           <p>Reserved Date: <span>{{$reserves->created_at}}</span></p>
                         </div>
                     </div>
                 </div>
@@ -82,16 +88,16 @@
                                 <div class="media">
                                     
                                     <div class="media-body">
-                                        <p class="mt-0 title">Vehicle Name</p>
+                                        <p class="mt-0 title">{{$reserves->vehicle_name}}</p>
                                     </div>
                                 </div>
                             </td>
-                            <td>Vehicle Number</td>
-                            <td>Parking Lot</td>
-                            <td>Date</td>
-                            <td>Checkin Time</td>
-                            <td>Checkout Time</td>
-                            <td>Price /hr</td>
+                            <td>{{$reserves->vehicle_number}}</td>
+                            <td>{{$reserves->parkinglot}}</td>
+                            <td>{{$reserves->date}}</td>
+                            <td>{{$reserves->from_time}}</td>
+                            <td>{{$reserves->to_time}}</td>
+                            <td>Rs. 50</td>
                         </tr>
                     </tbody>
                 </table>
@@ -110,17 +116,17 @@
                                 <td>Rs 50.</td>
                             </tr>
                             <tr>
-                                <td>Duration</td>
-                                <td>1 hr</td>
+                                <td>Time Duration</td>
+                                <td>{{$reserves->to_time}} - {{$reserves->from_time}} =(__hrs)</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>Deliver:</td>
                                 <td>10$</td>
-                            </tr>
+                            </tr> -->
                             <tfoot>
                                 <tr>
                                     <td>Total:</td>
-                                    <td>Price * Duration</td>
+                                    <td>Rs 50 * Time Duration</td>
                                 </tr>
                             </tfoot>
                         </table>

@@ -9,9 +9,9 @@
         </div>
     </center>
     <br><br>
-  <form method="post" action="">
+  <form method="post" action="/search_parking_details">
     @csrf
-  <input type="text" name="vehicle_number" placeholder="Please search the vehicle details using vehicle number" required>
+  <input type="text" name="vehicle_number" placeholder="Please search the vehicle using vehicle number" required>
   <button>search</button>
 </form>
 <br><br>
@@ -50,7 +50,7 @@
           <td><center>{{$reserve->to_time}}</center></td>
           <td><center>{{$reserve->created_at}}</center></td>
           <td><center><a href="" style="background-color: #ff7200; border: none; color: white; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Checkin</a></center></td>
-          <td><center><a href="/invoice" style="background-color: #ff7200; border: none; color: white; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Checkout</a></center></td>
+          <td><center><a href="/invoice/{{$reserve->id}}" style="background-color: #ff7200; border: none; color: white; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Checkout</a></center></td>
           <td><center><a href="/reserve/{{$reserve->id}}" style="background-color: #ff7200; border: none; color: white; padding: 10px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Cancel reservation</a></center></td>
         </tr>
         @endforeach

@@ -7,6 +7,13 @@
     <div>
 	    <h3>PARKING LOT DETAILS</h3>
 		
+
+        <form method="post" action="/search_parking_lot_name">
+            @csrf
+        <input type="text" name="parking_lot_name" value="P" placeholder="Please search with parking lot name" required>
+        <button>search</button>
+        </form>
+        <br>
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>

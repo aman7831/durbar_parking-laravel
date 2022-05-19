@@ -7,18 +7,18 @@
   <!--for demo wrap-->
   <h1>All reserved vehicle for parking</h1>
   <br><br>
-  <form method="post" action="#">
-    @csrf
-  <input type="text" name="vehicle_number" placeholder="Please search the vehicle details using vehicle number" required>
-  <button>search</button>
-</form>
+    <form method="post" action="/search_reserved_vehicle">
+      @csrf
+      <input type="text" name="vehicle_number" placeholder="Please search the vehicle details using vehicle number" required>
+      <button>search</button>
+    </form>
 <br><br>
 
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-          <th><center>Reserve parking ID</center></th>
+          <!-- <th><center>Reserve parking ID</center></th> -->
           <th><center>Vehicle Name</center></th>
           <th><center>Vehicle Number</center></th>
           <th><center>Parking lot</center></th>
@@ -40,7 +40,7 @@
         @if(!empty($reserves))
         @foreach($reserves as $reserve)
         <tr>
-          <td><center>{{$reserve->id}}</center></td>
+          <!-- <td><center>{{$reserve->id}}</center></td> -->
           <td><center>{{$reserve->vehicle_name}}</center></td>
           <td><center>{{$reserve->vehicle_number}}</center></td>
           <td><center>{{$reserve->parkinglot}}</center></td>

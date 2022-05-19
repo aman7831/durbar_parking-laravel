@@ -34,28 +34,71 @@ class admincontroller extends Controller
     public function registeredvehicle()
     {
         $vehicle = Vehicle::join('users','vehicles.user_id','=','users.id')->get();
-        return view('admin.registered_vehicle',compact('vehicle')); 
+        
+        if(auth()->user()){
+            if(auth()->user()->role_id==1){
+                return view('admin.registered_vehicle',compact('vehicle'));     
+            }
+            else{
+                return redirect('/home');
+            }
+        } 
+        else{
+            return redirect('/home');
+        }
    
     }
 
     public function allreservedparkinglotdetails()
     {
+        // $reserves = ReserveParking::get()->all();
         $reserves = ReserveParking::join('users','reserve_parkings.user_id','=','users.id')->get();
-        return view('admin.check_reserve_parking',compact('reserves')); 
-   
+
+        if(auth()->user()){
+            if(auth()->user()->role_id==1){
+                return view('admin.check_reserve_parking',compact('reserves'));     
+            }
+            else{
+                return redirect('/home');
+            }
+        } 
+        else{
+            return redirect('/home');
+        }   
     }
 
     public function parkinglotdetails()
     {
         $parkinglots = Parkinglot::get()->all();
-        return view('admin.parking-lot-details',compact('parkinglots'));
+        if(auth()->user()){
+            if(auth()->user()->role_id==1){
+                return view('admin.parking-lot-details',compact('parkinglots'));     
+            }
+            else{
+                return redirect('/home');
+            }
+        } 
+        else{
+            return redirect('/home');
+        }
     }
 
     public function parkinglotdetailsedit($id)
     {
         $parkinglots = Parkinglot::where('id',$id)->first();
-        return view('admin.parking_lot_details_edit',compact('parkinglots'));
+        if(auth()->user()){
+            if(auth()->user()->role_id==1){
+                return view('admin.parking_lot_details_edit',compact('parkinglots'));   
+            }
+            else{
+                return redirect('/home');
+            }
+        } 
+        else{
+            return redirect('/home');
+        }
     }
+
 
     public function vehicleedit($id)
     {
@@ -63,11 +106,76 @@ class admincontroller extends Controller
         return view('vehicle_edit',compact('vehicle'));
     }
     
+
+
+
+
+
+
+
+    //linear search
     public function search(Request $request)
     {
         $vehicle = Vehicle::join('users','vehicles.user_id','=','users.id')->where('vehicle_number',$request->vehicle_number)->get();
-        return view('admin.registered_vehicle', compact('vehicle')); 
+        
+        if(auth()->user()){
+            if(auth()->user()->role_id==1){
+                return view('admin.registered_vehicle', compact('vehicle'));    
+            }
+            else{
+                return redirect('/home');
+            }
+        } 
+        else{
+            return redirect('/home');
+        }
+
+    }
+
+    public function search_reserved_vehicle(Request $request)
+    {
+        $reserves = ReserveParking::join('users','reserve_parkings.user_id','=','users.id')->where('vehicle_number',$request->vehicle_number)->get();
+        
+        if(auth()->user()){
+            if(auth()->user()->role_id==1){
+                return view('admin.check_reserve_parking', compact('reserves')); 
+   
+            }
+            else{
+                return redirect('/home');
+            }
+        } 
+        else{
+            return redirect('/home');
+        }
+    }
+
+    public function search_parking_lot_name(Request $request)
+    {
+        $parkinglots = Parkinglot::where('parking_lot_name',$request->parking_lot_name)->get()->all();
+        
+        if(auth()->user()){
+            if(auth()->user()->role_id==1){
+                return view('admin.parking-lot-details', compact('parkinglots')); 
+
+            }
+            else{
+                return redirect('/home');
+            }
+        } 
+        else{
+            return redirect('/home');
+        }
+
     }
 
 
+
+    public function search_parking_details(Request $request)
+    {
+        $reserves = ReserveParking::where('user_id',auth()->user()->id)->where('vehicle_number',$request->vehicle_number)->get();
+        return view('parking_details',compact('reserves'));
+    }
+    
+    
 }

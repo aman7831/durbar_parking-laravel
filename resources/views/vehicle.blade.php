@@ -7,6 +7,11 @@
     <div>
 	    <h3> Registered vehicle of {{ Auth::user()->name }} is :-</h3>
 		
+        <form method="post" action="/search">
+    @csrf
+  <input type="text" name="vehicle_number" placeholder="Please search the vehicle details using vehicle number" required>
+  <button>search</button>
+</form>
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>

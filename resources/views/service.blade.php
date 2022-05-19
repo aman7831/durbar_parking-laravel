@@ -75,7 +75,7 @@
             </a>
         </div> -->
 
-        <div class="column">
+        <!-- <div class="column">
             <div class="card">
             <a href="/invoice">
                 <div class="icon-wrapper">
@@ -89,7 +89,7 @@
                 </p>
             </div>
 </a>
-        </div>
+        </div> -->
 
         <div class="column">
             <div class="card">

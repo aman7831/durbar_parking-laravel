@@ -27,7 +27,7 @@ Route::get('/book_now', [App\Http\Controllers\Parking_detailsController::class, 
 Route::get('/use_now', [App\Http\Controllers\Parking_detailsController::class, 'use_now'])->name('use_now');
 Route::get('/reserve_now/{id}', [App\Http\Controllers\Parking_detailsController::class, 'reserve_now'])->name('reserve_now');
 Route::get('/parking_details', [App\Http\Controllers\Parking_detailsController::class, 'parking_details'])->name('parking_details');
-Route::get('/invoice', [App\Http\Controllers\Parking_detailsController::class, 'invoice'])->name('invoice');
+Route::get('/invoice/{id}', [App\Http\Controllers\Parking_detailsController::class, 'invoice'])->name('invoice');
 Route::get('/payment', [App\Http\Controllers\Parking_detailsController::class, 'payment'])->name('payment');
 
 
@@ -68,3 +68,8 @@ Route::get('/allreservedparkinglotdetails', [App\Http\Controllers\AdminControlle
 
 //search
 Route::post('/search', [App\Http\Controllers\AdminController::class, 'search'])->name('search');
+Route::post('/search_reserved_vehicle', [App\Http\Controllers\AdminController::class, 'search_reserved_vehicle'])->name('search_reserved_vehicle');
+Route::post('/search_parking_lot_name', [App\Http\Controllers\AdminController::class, 'search_parking_lot_name'])->name('search_parking_lot_name');
+Route::post('/search_parking_details', [App\Http\Controllers\AdminController::class, 'search_parking_details'])->name('search_parking_details');
+
+

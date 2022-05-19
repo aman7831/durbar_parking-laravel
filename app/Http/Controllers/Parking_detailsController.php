@@ -40,10 +40,10 @@ class Parking_detailsController extends Controller
         return view('reserve_now',compact('vehicle','parkinglot'));
     }
 
-    public function invoice()
+    public function invoice($id)
     {
-        $reserves = ReserveParking::where('user_id',auth()->user()->id)->first();
-        return view('invoice',compact('reserves'));
+        $reserves = ReserveParking::where('id',$id)->first();
+        return view('invoice',compact('reserves')); 
     }
     public function payment()
     {
