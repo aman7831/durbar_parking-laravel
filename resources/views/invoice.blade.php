@@ -80,7 +80,7 @@
                             <td>Checkin Time</td>
                             <td>Checkout Time</td>
                             <td>Time parked</td>
-                            <td>Total price</td>
+                            <!-- <td>Total price</td> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -113,7 +113,7 @@
                             <td>{{$reserves->to_time}}</td>
                             <td>{{date('h:i',$time_diff)}}</td>
                            
-                            <td>{{$total}}</td>
+                            <!-- <td>{{$total}}</td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -139,7 +139,7 @@
                             <tfoot>
                                 <tr>
                                     <td>Total:</td>
-                                    <td>Rs 50 *  {{date('h:i',$time_diff)}}
+                                    <td>Rs. {{$total}}
                                     </td>
                                 </tr>
                             </tfoot>
