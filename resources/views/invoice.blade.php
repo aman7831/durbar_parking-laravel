@@ -79,7 +79,8 @@
                             <td>Date</td>
                             <td>Checkin Time</td>
                             <td>Checkout Time</td>
-                            <td>Price /hr</td>
+                            <td>Time parked</td>
+                            <td>Total price</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,12 +93,27 @@
                                     </div>
                                 </div>
                             </td>
+
+                            <?php 
+                            $time_diff = strtotime($reserves->to_time)-strtotime($reserves->from_time);
+                            $hrs = date('h',$time_diff);
+                            $mins = date('i',$time_diff);
+                            $secs = date('s',$time_diff);
+                            $time = $time_diff/60/60;
+                            if($mins>0){
+                                $time++;
+                            }
+                            $total = $time * 50;
+                            ?>
+
                             <td>{{$reserves->vehicle_number}}</td>
                             <td>{{$reserves->parkinglot}}</td>
                             <td>{{$reserves->date}}</td>
                             <td>{{$reserves->from_time}}</td>
                             <td>{{$reserves->to_time}}</td>
-                            <td>Rs. 50</td>
+                            <td>{{date('h:i',$time_diff)}}</td>
+                           
+                            <td>{{$total}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -117,16 +133,14 @@
                             </tr>
                             <tr>
                                 <td>Time Duration</td>
-                                <td>{{$reserves->to_time}} - {{$reserves->from_time}} =(__hrs)</td>
+                                <td>{{date('h:i',$time_diff)}}</td>                            
                             </tr>
-                            <!-- <tr>
-                                <td>Deliver:</td>
-                                <td>10$</td>
-                            </tr> -->
+                          
                             <tfoot>
                                 <tr>
                                     <td>Total:</td>
-                                    <td>Rs 50 * Time Duration</td>
+                                    <td>Rs 50 *  {{date('h:i',$time_diff)}}
+                                    </td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -173,7 +187,9 @@
             </footer>
         </div>
     </div>
+
 <style>
+
     :root {
     --body-bg: rgb(204, 204, 204);
     --white: #ffffff;
