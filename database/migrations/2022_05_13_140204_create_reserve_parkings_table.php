@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('reserve_parkings', function (Blueprint $table) {
             $table->id();
-
+            
             $table->string('vehicle_name')->nullable();
             $table->string('vehicle_number')->nullable();
             $table->string('parkinglot')->nullable();
+            $table->string('parkinglotid')->nullable();
             $table->string('date')->nullable();
             $table->string('from_time')->nullable();
             $table->string('to_time')->nullable();
-
 
 
             $table->unsignedBigInteger('user_id')->nullable();

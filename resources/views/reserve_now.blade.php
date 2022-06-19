@@ -66,6 +66,22 @@
                 <label>Parking lot (P) : </label>
               </div>
 
+
+              <div class="user-box">
+                <!-- <button id="sub" style="width: 10px; height: 10px; cursor: pointer;">-</button> -->
+                <?php
+                if(!empty($parkinglot)){
+                $name = $parkinglot->id;
+                }
+                else{
+                  $name = null;
+                }
+                ?>
+                <input type="text" name="parkinglotid" id="qtyBox" value="{{$name}}" placeholder="{{$name}}" required="">
+                <!-- <button id="add" style="width: 10px; height: 10px; cursor: pointer;">+</button> -->
+                <label>Parking lot ID : </label>
+              </div>
+
               <div class="user-box">
                 <input  id="date_picker" type="date" name="date" required="">
                 <label>Date : </label>

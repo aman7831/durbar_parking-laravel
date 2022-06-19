@@ -43,6 +43,7 @@ class ReserveParkingController extends Controller
         $r->vehicle_name = $request->vehicle_name;
         $r->vehicle_number = $request->vehicle_number;
         $r->parkinglot = $request->parkinglot;
+        $r->parkinglotid = $request->parkinglotid;
         $r->date = $request->date;
         $r->from_time = $request->from_time;
         $r->to_time = $request->to_time;

@@ -18,10 +18,10 @@
 
     <div class="container">
            
-        <a href="#">
+        <a href="/start">
         <div class="row"> 
             <div class="card" style="width: 8rem;">   
-                <button href="#" class="buy_now btn-success">Start</button>
+                <button href="/start" class="buy_now btn-success">Start</button>
                 
                 <div class= "col-md-1"></div>
             </div>

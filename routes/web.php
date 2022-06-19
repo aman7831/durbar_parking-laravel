@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('', function () {
-    return view('home');
+    return view('/home');
 });
 
 Auth::routes();
@@ -29,6 +29,7 @@ Route::get('/reserve_now/{id}', [App\Http\Controllers\Parking_detailsController:
 Route::get('/parking_details', [App\Http\Controllers\Parking_detailsController::class, 'parking_details'])->name('parking_details');
 Route::get('/invoice/{id}', [App\Http\Controllers\Parking_detailsController::class, 'invoice'])->name('invoice');
 Route::get('/payment', [App\Http\Controllers\Parking_detailsController::class, 'payment'])->name('payment');
+Route::get('/start', [App\Http\Controllers\HomeController::class, 'start'])->name('start');
 
 
 // REGISTERED VEHICLE ROUTE 

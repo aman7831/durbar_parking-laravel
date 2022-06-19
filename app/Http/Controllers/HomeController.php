@@ -29,6 +29,31 @@ class HomeController extends Controller
     {
         $parkinglots = Parkinglot::get();
         return view('home',compact('parkinglots'));
+
     }
 
+    public function start(){
+    //    reserve parking ->parkinglot_id
+        //parking -> reserve parking join
+        //reserve foreach  current time _ reserve time  compare 
+    //khali xa ki nai
+/*
+
+        $parkinglots = Parkinglot::get();
+foreach($parkinglots as $parking){
+date
+if( $parking->reserve()->date() = date())
+
+check succes ->return
+   
+}
+
+    }
+   return  full
+
+
+*/
+
+
+    }
 }
