@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('vehicle_name')->nullable();
             $table->string('vehicle_number')->nullable();
             $table->string('parkinglot')->nullable();
-            $table->string('parkinglotid')->nullable();
             $table->string('date')->nullable();
             $table->string('from_time')->nullable();
             $table->string('to_time')->nullable();
@@ -27,7 +26,9 @@ return new class extends Migration
 
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-
+            $table->unsignedBigInteger('parkinglotid')->nullable();
+            $table->foreign('parkinglotid')->references('id')->on('users');
+            
             $table->timestamps();
         });
     }
