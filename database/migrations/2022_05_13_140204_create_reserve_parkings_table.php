@@ -27,7 +27,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('parkinglotid')->nullable();
-            $table->foreign('parkinglotid')->references('id')->on('users');
+            $table->foreign('parkinglotid')->references('id')->on('parkinglots');
             
             $table->timestamps();
         });

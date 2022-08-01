@@ -18,7 +18,7 @@ class ReserveParkingController extends Controller
     {
         $reserves = ReserveParking::where('user_id',auth()->user()->id)->get();
 
-        return view('reserve',compact('reserves'));
+        return view('parking_details',compact('reserves'));
     }
     /**
      * Show the form for creating a new resource.
@@ -38,7 +38,7 @@ class ReserveParkingController extends Controller
      */
     public function store(Request $request)
     {
-        $user = auth()->user()?auth()->user()->id:null;
+        $user = auth()->user()->id;
         $r= new ReserveParking();
         $r->vehicle_name = $request->vehicle_name;
         $r->vehicle_number = $request->vehicle_number;

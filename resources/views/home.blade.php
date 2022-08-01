@@ -16,6 +16,18 @@
 
     <!-- <hr style="color:red;; width:100%; border:0; border-bottom:3px solid #ff7200;"> -->
 
+       @if(!empty($available))
+       @foreach($available as $av)
+    <div class="row"> 
+            <div class="card" style="width: 8rem;">   
+                <button href="/reserve_now/{{$av->parkinglotid}}" class="buy_now btn-primary">{{$av->parking_lot_name}} </button>
+                <div class= "col-md-1"></div>
+            </div>
+            
+        </div>
+        @endforeach
+         @endif
+
     <div class="container">
            
         <a href="/start">
@@ -28,7 +40,7 @@
             
         </div>
         </a>
-
+     
         @if(!empty($parkinglots))
         @foreach($parkinglots as $parkinglot)
         
@@ -42,6 +54,8 @@
             
         </div>
         </a>
+
+        
         @endforeach
         @endif
 

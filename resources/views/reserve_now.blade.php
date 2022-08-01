@@ -1,4 +1,4 @@
-@extends('layouts.app')
+  @extends('layouts.app')
 
 @section('content')
   <div class="container">
@@ -71,13 +71,13 @@
                 <!-- <button id="sub" style="width: 10px; height: 10px; cursor: pointer;">-</button> -->
                 <?php
                 if(!empty($parkinglot)){
-                $name = $parkinglot->id;
+                $id = $parkinglot->id;
                 }
                 else{
-                  $name = null;
+                  $id = null;
                 }
                 ?>
-                <input type="text" name="parkinglotid" id="qtyBox" value="{{$name}}" placeholder="{{$name}}" required="">
+                <input type="text" name="parkinglotid" id="qtyBox" value="{{$id}}" placeholder="{{$id}}" required="">
                 <!-- <button id="add" style="width: 10px; height: 10px; cursor: pointer;">+</button> -->
                 <label>Parking lot ID : </label>
               </div>
