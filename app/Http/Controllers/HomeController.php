@@ -40,18 +40,24 @@ class HomeController extends Controller
         $parkinglots = Parkinglot::get();
         $today = date('Y-m-d');
         $time =date('h:i');
-        $available = null;
-        $parking = ReserveParking::rightjoin('parkinglots','reserve_parkings.parkinglotid','=','parkinglots.id')->get();
-       foreach($parking as $a  => $park){
-           if($park->date == $today || $park->date == null){
-                if($time > $park->to_time || $time < $park->from_time ){
+        $unavailable = null;
+        $parking = ReserveParking::where('date',$today)->get();
+        foreach($parking as $a  => $park){
+                if($time > $park->to_time && $time > $park->from_time ){ 
+                }  
+                else if($time < $park->to_time && $time < $park->from_time ){ 
+                }
+                else{
+                    $unavailable[$a] = $park;
+                }
+        }   
+        $unavailable =collect($unavailable)->pluck('parkinglotid');
 
-                $available[$a] = $park;
-            }
-        }
-       }   
+        
+        $available = $parkinglots->whereNotIn('id',$unavailable);
+
+        return view('home',compact('parkinglots','available')); 
        
-       return view('home',compact('parkinglots','available')); 
 
    //convert time utc to local
 

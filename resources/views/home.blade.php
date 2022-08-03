@@ -14,26 +14,26 @@
         border-right: 10px solid #ff7200;
         border-bottom: 27px solid #ff7200;">
 
-    <!-- <hr style="color:red;; width:100%; border:0; border-bottom:3px solid #ff7200;"> -->
+    
 
-       @if(!empty($available))
-       @foreach($available as $av)
-    <div class="row"> 
-            <div class="card" style="width: 8rem;">   
-                <button href="/reserve_now/{{$av->parkinglotid}}" class="buy_now btn-primary">{{$av->parking_lot_name}} </button>
-                <div class= "col-md-1"></div>
-            </div>
-            
-        </div>
-        @endforeach
-         @endif
+       
+      
+                    
+                        @if(!empty($available))
+                         The available parking lot for now are:
+                        @foreach($available as $av),
+                        {{$av->parking_lot_name}}
+                        @endforeach                           
+                         @endif
+        
+    
+        
 
     <div class="container">
-           
         <a href="/start">
         <div class="row"> 
             <div class="card" style="width: 8rem;">   
-                <button href="/start" class="buy_now btn-success">Start</button>
+                <button href="/start" class="buy_now btn-success" id="button">Start</button>
                 
                 <div class= "col-md-1"></div>
             </div>
@@ -59,6 +59,7 @@
         @endforeach
         @endif
 
+
         <a href="">
         <div class="row"> 
             <div class="card" style="width: 8rem;">   
@@ -70,63 +71,5 @@
         </div>
         </a>
     </div>
-
-    <!-- <div class="column">
-            <div class="menu">
-                <ul>
-                    <li>
-                        <div class="parkinglot">
-                            <form>
-                                <a href="#" active>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <center>Start</center>
-                                </a>
-                            </form>
-                        </div>
-                    </li>
-                    @if(!empty($parkinglots))
-                    
-                    @foreach($parkinglots as $parkinglot)
-                    <li>
-                        <div class="parkinglot">
-                            <form>
-                                <a href="/reserve_now/{{$parkinglot->id}}">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <center>{{$parkinglot->parking_lot_name}}</center>
-                                </a>
-                            </form>
-                        </div>
-                    </li>
-                    @endforeach
-                    @endif
-
-                    <li>
-                        <div class="parkinglot">
-                            <form>
-                                <a href="/home">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <center>End</center>
-                                </a>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
-                <br><br>
-            </div>          
-        </div>
-        <hr style="color:red;; width:100%; border:0; border-bottom:3px solid white;">
-
-        <br><br>
-        
-    </div> -->
 </div>
 @endsection

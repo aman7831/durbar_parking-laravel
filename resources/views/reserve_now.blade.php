@@ -69,6 +69,12 @@
 
               <div class="user-box">
                 <!-- <button id="sub" style="width: 10px; height: 10px; cursor: pointer;">-</button> -->
+
+     
+
+
+
+
                 <?php
                 if(!empty($parkinglot)){
                 $id = $parkinglot->id;
@@ -96,7 +102,18 @@
                 <input type="time" name="to_time" required="">
                 <label>To (Time) : </label>
               </div>
-
+              @if(!empty($message))
+                  {{$message}}
+                  @dd($message)
+                  @endif
+                 
+                 
+                 
+                 
+                 
+                  @if($errors->any())
+<h4>{{$errors->first()}}</h4>
+@endif
               
               <a href="/parking_details">
                 <button type="submit">

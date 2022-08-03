@@ -38,6 +38,21 @@ class ReserveParkingController extends Controller
      */
     public function store(Request $request)
     {
+        $parking = ReserveParking::where('date',$request->date)->get();
+        foreach($parking as $a  => $park){
+                if($request->from_time > $park->to_time && $request->from_time > $park->from_time ){ 
+                }  
+                else if($request->to_time < $park->to_time && $request->to_time < $park->from_time ){ 
+                }
+                else{
+                    return redirect()->back()->withErrors(['msg' => 'The Message']);
+                }
+        }  
+
+
+
+
+
         $user = auth()->user()->id;
         $r= new ReserveParking();
         $r->vehicle_name = $request->vehicle_name;
